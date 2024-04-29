@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+    <link href="../static/css/home.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun" >
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Recipe List</h2>
+        <form action="/add"><button class="btn btn-primary mb-3">Add New Recipe</button></form>
+        <form action="/profile"><button class="btn btn-primary mb-3">View Profile</button></form>
+
+
+        <form action="/search" method="get" style="display: inline-block;">
+            <input type="text" name="query" required="required" placeholder="Search recipes...">
+            <button type="submit" class="btn btn-secondary">Search</button>
+        </form>
+        
+        <div class="list-group">
+            {% for recipe in recipes %}
+                <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
+                <br />
+                <br />
+                <br />
+            {% endfor %}
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
