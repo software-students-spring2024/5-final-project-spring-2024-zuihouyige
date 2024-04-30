@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 import os
 from dotenv import load_dotenv
-from werkzeug.urls import secure_filename
+from werkzeug.utils import secure_filename
 import base64
 
 load_dotenv()
