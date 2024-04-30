@@ -5,6 +5,8 @@ import os
 from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
 import base64
+from PIL import Image
+import io
 
 load_dotenv()
 
@@ -32,8 +34,7 @@ def allowed_image(filename):
     else:
         return False
 
-from PIL import Image
-import io
+
 
 def save_image_to_mongodb(photo):
     
