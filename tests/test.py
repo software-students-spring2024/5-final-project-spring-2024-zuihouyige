@@ -1,6 +1,6 @@
 
 import pytest
-from app import app as flask_app, db
+from app.app import app as flask_app, db  # if 'app' is a directory and 'app.py' is inside it.
 from bson.objectid import ObjectId
 from pymongo import MongoClient
 import io
