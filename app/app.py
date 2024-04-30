@@ -10,7 +10,7 @@ import io
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='../templates')
 
 app.config['ALLOWED_IMAGE_EXTENSIONS'] = ['PNG', 'JPG', 'JPEG', 'GIF']
 
