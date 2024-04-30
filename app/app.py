@@ -120,5 +120,6 @@ def profile():
     return render_template("profile.html")
    
 if __name__ == "__main__":
-    app.run(debug=True, port=os.getenv("FLASK_PORT", 5001))
+    app.run(host='0.0.0.0', port=int(os.getenv("FLASK_PORT", 5001)), debug=True)
+
 

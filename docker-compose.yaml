@@ -6,7 +6,8 @@ services:
     ports:
       - "5001:5001"
     environment:
-      - MONGO_URI=mongodb://mongo:27017/mydatabase
+      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_DBNAME=Flask
     depends_on:
       - mongo
     volumes:
@@ -14,8 +15,6 @@ services:
 
   mongo:
     image: mongo
-    environment:
-      - MONGO_INITDB_DATABASE=mydatabase
     volumes:
       - mongo-data:/data/db
 
