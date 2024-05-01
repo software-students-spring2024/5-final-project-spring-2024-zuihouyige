@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete Recipe Confirmation</title>
-    <link href="../static/css/delete.css" rel="stylesheet" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun" >
+    <link href="../static/css/delete.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="jumbotron">
-            <h2>Are you sure you want to delete this recipe?</h2>
-            <p>This action cannot be undone.</p>
-            <form style="text-align: center" action="/delete/{{ recipe._id }}" method="post" class="mt-4">
-                <button type="submit" class="btn btn-danger">Yes, delete it</button>
+    <div class="container">
+        <h2>Are you sure you want to delete this recipe?</h2>
+        <p>This action cannot be undone.</p>
+        <div class="button-group">
+            <form action="/delete/{{ recipe._id }}" method="post">
+                <button type="submit" class="button btn-danger">Yes, delete it</button>
             </form>
-            <form action="/recipe/{{ recipe._id }}"><button class="btn btn-secondary">Cancel</button></form>
+            <form action="/recipe/{{ recipe._id }}">
+                <button type="button" class="button btn-secondary">Cancel</button>
+            </form>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

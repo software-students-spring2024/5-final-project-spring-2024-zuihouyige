@@ -1,41 +1,62 @@
-.container {
-    max-width: 800px;
-    margin: auto;
-    background: rgb(252, 210, 210);
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: #f9f9f9;
+    margin: 0;
     padding: 20px;
 }
 
-body {
-    background: rgb(177, 176, 141);
-}
-
-h1, h2 {
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     text-align: center;
-    font-family: Playfair Display;
-    font-size: 54px;
-    background-color:rgb(253, 171, 171);
-    padding: 32px;
 }
 
-button, strong {
-    text-align: center;
-    font-family: Josefin Sans;
+h2 {
+    font-size: 28px;
+    color: #333;
 }
 
-p {
-    text-align: center;
-    font-family: Sarabun;
+.recipe-details p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
 }
 
-button {
-    border-radius: 16px;
-    transition-duration: 0.5s;
-    padding: 12px;
-    font-size: 14px;
-
+.recipe-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
 }
 
-button:hover {
-    background-color: yellowgreen;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+.button, .button-group form {
+    margin-top: 10px;
+}
+
+.button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit {
+    background-color: #f0ad4e; /* Orange for edit */
+}
+
+.delete {
+    background-color: #d9534f; /* Red for delete */
+}
+
+.back {
+    background-color: #6c757d; /* Gray for back */
+}
+
+.button:hover {
+    opacity: 0.8;
 }

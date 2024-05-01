@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Recipe</title>
-    <link href="../static/css/edit.css" rel="stylesheet" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun" >
+    <link href="../static/css/edit.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container">
         <h2>Edit Recipe</h2>
         <form action="/edit/{{ recipe._id }}" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -30,14 +28,11 @@
                 <input type="file" class="form-control-file" id="photo" name="photo">
                 <small class="form-text text-muted">Supported formats: PNG, JPG, JPEG, GIF</small>
             </div>
-            <button type="submit" class="btn btn-primary">Update Recipe</button>
+            <button type="submit" class="button">Update Recipe</button>
         </form>
-        <form action="/"><button>Back to Home</button></form>
+        <form action="/" class="back-form">
+            <button type="submit" class="button">Back to Home</button>
+        </form>
     </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
