@@ -2,9 +2,7 @@
 [![Flask CI/CD](https://github.com/software-students-spring2024/5-final-project-spring-2024-zuihouyige/actions/workflows/CICD.yml/badge.svg)](https://github.com/software-students-spring2024/5-final-project-spring-2024-zuihouyige/actions/workflows/CICD.yml)
 [![log github events](https://github.com/software-students-spring2024/5-final-project-spring-2024-zuihouyige/actions/workflows/event-logger.yml/badge.svg)](https://github.com/software-students-spring2024/5-final-project-spring-2024-zuihouyige/actions/workflows/event-logger.yml)
 
-
-An exercise to put to practice software development teamwork, subsystem communication, containers, deployment, and CI/CD pipelines. See [instructions](./instructions.md) for details.
-
+To revolutionize the culinary journey by creating a comprehensive, user-friendly platform that not only enriches cooking and eating experiences with a diverse array of global recipes and detailed nutritional insights but also fosters a vibrant community of food enthusiasts. By empowering users to share their culinary creations, access personalized nutrition information, and connect with like-minded individuals, we aim to make cooking a more accessible, health-conscious, and socially engaging activity for everyone, regardless of their dietary preferences or cooking skill level.
 
 ## How to run
 [Deploy](http:/)
