@@ -13,6 +13,8 @@ services:
       - mongo
     volumes:
       - .:/app
+    networks:
+      - app-network
 
   mongo:
     image: mongo
@@ -20,6 +22,12 @@ services:
       - "27018:27017"
     volumes:
       - mongo-data:/data/db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   mongo-data:
