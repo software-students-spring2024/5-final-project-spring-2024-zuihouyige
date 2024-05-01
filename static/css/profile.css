@@ -1,36 +1,46 @@
-.container {
-    max-width: 800px;
-    margin: auto;
-    background: rgb(252, 210, 210);
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: #f9f9f9;
+    margin: 0;
     padding: 20px;
 }
 
-body {
-    background: rgb(177, 176, 141);
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 h1, h2 {
     text-align: center;
-    font-family: Playfair Display;
-    font-size: 54px;
-    background-color:rgb(253, 171, 171);
-    padding: 32px;
+    font-size: 28px;
+    color: #333;
+    padding-bottom: 20px;
 }
 
-button, .profile-info, .user-recipes {
+.profile-info, .user-recipes {
     text-align: center;
-    font-family: Josefin Sans;
+    margin-bottom: 20px;
 }
 
-button {
-    border-radius: 16px;
-    transition-duration: 0.5s;
-    padding: 12px;
-    font-size: 14px;
-
+.profile-info p, .user-recipes p {
+    font-size: 16px;
+    color: #666;
 }
 
-button:hover {
-    background-color: yellowgreen;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+.button, .back-form button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #367C39;
 }

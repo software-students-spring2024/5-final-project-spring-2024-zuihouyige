@@ -1,58 +1,59 @@
-.container {
-    max-width: 800px;
-    margin: auto;
-    background: rgb(252, 210, 210);
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: #f9f9f9;
+    margin: 0;
     padding: 20px;
 }
 
-body {
-    background: rgb(177, 176, 141);
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 h1 {
     text-align: center;
-    font-family: Playfair Display;
-    font-size: 54px;
-    background-color:rgb(253, 171, 171);
-    padding: 32px;
-}
-
-h2 {
-    text-align: center;
-    font-family: Josefin Sans;
-    padding: 16px;
-    border-radius: 12px;
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(225, 224, 224));
-}
-
-button, p {
-    text-align: center;
-    font-family: Josefin Sans;
-}
-
-button {
-    border-radius: 16px;
-    transition-duration: 0.5s;
-    padding: 12px;
-    font-size: 14px;
-
-}
-
-button:hover {
-    background-color: yellowgreen;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 28px;
+    color: #333;
 }
 
 .list-group {
-    font-size: 32px;
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-card {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.recipe-card a {
+    text-decoration: none;
+    color: #333;
+    display: block; /* Ensure that the link fills the card for better clickability */
     text-align: center;
 }
 
-.list-group-item {
+.button, .back-form button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #367C39;
+}
+
+p {
     text-align: center;
-    font-family: Josefin Sans;
-    /* background-color: rgb(240, 237, 237); */
-    padding: 16px;
-    border-radius: 12px;
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(215, 213, 213))
+    font-size: 16px;
+    color: #666;
 }
