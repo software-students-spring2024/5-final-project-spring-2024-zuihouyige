@@ -6,6 +6,7 @@ To revolutionize the culinary journey by creating a comprehensive, user-friendly
 
 ## How to run
 Link for deploy - [Deploy](http://159.203.122.28:5001/)
+
 You can also use [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 Create a local repository using the following command:
     
