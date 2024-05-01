@@ -46,6 +46,6 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: yourusername/yourappname:latest
+        tags: yy3401/flaskapp:latest
 
     # Add deployment steps here if applicable
