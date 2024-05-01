@@ -2,13 +2,12 @@ version: '3.8'
 
 services:
   web:
-    build:
-      context: .
+    build: .
     image: yy3401/5-final-project-spring-2024-zuihouyige-web:latest
     ports:
       - "5001:5001"
     environment:
-      - MONGO_URI=mongodb://root:password@mongo:27017/Flask
+      - MONGO_URI=mongodb://mongo:27017
       - MONGO_DBNAME=Flask
     depends_on:
       - mongo
@@ -17,9 +16,6 @@ services:
 
   mongo:
     image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - mongo-data:/data/db
 
