@@ -1,62 +1,70 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background: #f9f9f9;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
 }
 
 .container {
+    width: 100%;
     max-width: 800px;
-    margin: auto;
     background: white;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
     text-align: center;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 24px;
     color: #333;
+    margin-bottom: 20px;
 }
 
-.recipe-details p {
+p {
     font-size: 16px;
     color: #666;
-    margin-bottom: 10px;
+    margin: 10px 0;
+    text-align: left; /* 如果你想让文字对齐看起来更整齐 */
 }
 
-.recipe-image {
+.img-fluid {
     max-width: 100%;
     height: auto;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
-.button, .button-group form {
-    margin-top: 10px;
-}
-
-.button {
-    width: 100%;
-    padding: 12px 20px;
-    background-color: #4CAF50;
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
     color: white;
+    margin: 5px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.edit {
-    background-color: #f0ad4e; /* Orange for edit */
+.btn-warning {
+    background-color: #f0ad4e;
 }
 
-.delete {
-    background-color: #d9534f; /* Red for delete */
+.btn-warning:hover {
+    background-color: #ec971f;
 }
 
-.back {
-    background-color: #6c757d; /* Gray for back */
+.btn-danger {
+    background-color: #d9534f;
 }
 
-.button:hover {
-    opacity: 0.8;
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
 }

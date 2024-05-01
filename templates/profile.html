@@ -2,28 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Profile</title>
-    <link href="../static/css/profile.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="../static/css/home.css" rel="stylesheet"> <!-- 确保使用正确的CSS路径 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
 </head>
 <body>
     <div class="container">
-        <h1>User Profile</h1>
-        <div class="profile-info">
+        <h2>User Profile</h2>
+        <div class="profile-details">
             <p><strong>Name:</strong> John Doe</p>
             <p><strong>Email:</strong> johndoe@example.com</p>
-            <!-- Add more profile fields as necessary -->
+            <!-- 其他用户详细信息 -->
         </div>
-    
-        <h2>Your Recipes</h2>
-        <div class="user-recipes">
-            <p>No recipes to display.</p>
-            <!-- Placeholder for listing user's recipes -->
+        <div class="actions">
+            <button class="button" onclick="location.href='/'">Back to Home</button>
         </div>
-    
-        <form action="/" class="back-form">
-            <button type="submit" class="button">Back to Home</button>
-        </form>
     </div>
 </body>
 </html>
