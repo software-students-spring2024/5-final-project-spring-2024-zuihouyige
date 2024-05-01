@@ -5,7 +5,7 @@
 To revolutionize the culinary journey by creating a comprehensive, user-friendly platform that not only enriches cooking and eating experiences with a diverse array of global recipes and detailed nutritional insights but also fosters a vibrant community of food enthusiasts. By empowering users to share their culinary creations, access personalized nutrition information, and connect with like-minded individuals, we aim to make cooking a more accessible, health-conscious, and socially engaging activity for everyone, regardless of their dietary preferences or cooking skill level.
 
 ## How to run
-Link for deploy - [Deploy](http://159.203.122.28:5001/)
+Link for deploy - [Deploy using DigitalOcean](http://159.203.122.28:5001/)
 
 You can also use [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 Create a local repository using the following command:
