@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
-    <link href="../static/css/search.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+    <link href="../static/css/search.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun" >
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <h1>Search Results for "{{ query }}"</h1>
         <div class="list-group">
             {% for recipe in recipes %}
-                <div class="recipe-card">
-                    <a href="/recipe/{{ recipe._id }}">{{ recipe.name }}</a>
-                </div>
+                <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
+                <br />
+                <br />
+                <br />
             {% else %}
                 <p>No recipes found.</p>
             {% endfor %}
         </div>
-        <form action="/" class="back-form">
-            <button type="submit" class="button">Back to Home</button>
-        </form>
+        <form action="/"><button class="btn btn-secondary mt-3">Back to Home</button></form>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

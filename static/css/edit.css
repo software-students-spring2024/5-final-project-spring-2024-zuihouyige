@@ -1,52 +1,61 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background: #f9f9f9;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
 }
 
 .container {
+    width: 100%;
     max-width: 800px;
-    margin: auto;
     background: white;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-h2 {
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
     text-align: center;
-    font-size: 28px;
-    color: #333;
-    padding-bottom: 20px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
-.label, .form-control, .form-control-file, .form-text {
+label {
     display: block;
-    width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
 }
 
-.form-control, .form-control-file {
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
     padding: 10px;
+    margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.button, .back-form .button {
-    width: 100%;
-    padding: 12px 20px;
+button.btn {
+    width: auto;
+    padding: 10px 20px;
+    margin: 10px 5px; /* Adds spacing between buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
     background-color: #4CAF50;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.button:hover {
-    background-color: #367C39;
+button.btn:hover {
+    background-color: #45a049;
+}
+
+.form-text {
+    font-size: 12px;
+    color: #666;
 }
