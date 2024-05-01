@@ -21,6 +21,7 @@ To install the required dependencies and run the program, run the following comm
     docker-compose up --build
 
 To use the app, open a web browser and navigate to [localhost:5001](http).
+or open the link online: [http://159.203.122.28:5001/](http)
 ## Team Members
 
 -[Yinyi Wen](https://github.com/YY35n)
