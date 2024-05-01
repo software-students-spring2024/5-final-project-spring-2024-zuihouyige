@@ -6,9 +6,6 @@ services:
     image: yy3401/5-final-project-spring-2024-zuihouyige-web:latest
     ports:
       - "5001:5001"
-    environment:
-      - MONGO_URI=mongodb://mongo:27017
-      - MONGO_DBNAME=Flask
     depends_on:
       - mongo
     volumes:
