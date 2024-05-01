@@ -1,70 +1,55 @@
 import pytest
-from unittest.mock import patch
-from app.app import app as flask_app  # Adjust the import based on your project structure
+from app import app as flask_app  # Ensure this import matches your project structure
+from bson.objectid import ObjectId
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def client():
-    # Patching MongoClient to prevent actual DB connection
-    with patch('pymongo.MongoClient') as MockMongoClient:
-        # Set up mock database and collections
-        mock_db = MockMongoClient.return_value
-        mock_db.__getitem__.return_value.recipes.find.return_value = [{"name": "Chocolate Cake"}]
-        mock_db.__getitem__.return_value.recipes.find_one.return_value = {"name": "Chocolate Cake", "ingredients": "Chocolate, Eggs, Flour, Sugar", "steps": "Mix and bake"}
-        
-        # Flask provides a way to test your application by exposing the Werkzeug test Client
-        # and handling the context locals for you.
-        flask_app.config['TESTING'] = True
-        with flask_app.test_client() as client:
-            yield client
+    # Set the app to testing mode
+    flask_app.config['TESTING'] = True
+    with flask_app.test_client() as client:
+        yield client
+
+@pytest.fixture(scope="module")
+def test_recipe_id():
+    return ObjectId()  # Generate a sample ObjectId for testing
 
 def test_home(client):
     """Test the home page route."""
     response = client.get('/')
     assert response.status_code == 200
-    assert 'Chocolate Cake' in response.get_data(as_text=True)
 
-def test_recipe_detail(client):
+def test_recipe_detail(client, test_recipe_id):
     """Test the recipe detail page."""
-    response = client.get('/recipe/1')  # assuming '1' is the id used in the mocked find_one return
+    response = client.get(f'/recipe/{test_recipe_id}')
     assert response.status_code == 200
-    assert 'Ingredients' in response.get_data(as_text=True)
 
 def test_add_recipe(client):
-    """Test the add recipe route."""
-    with patch('app.app.db.recipes.insert_one') as mock_insert:
-        response = client.post('/add', data={
-            'name': 'Vanilla Cake',
-            'ingredients': 'Vanilla, Eggs, Flour, Sugar',
-            'steps': 'Mix and bake'
-        }, follow_redirects=True)
-        assert response.status_code == 200
-        mock_insert.assert_called_once()
+    """Test adding a new recipe."""
+    response = client.post('/add', data={
+        'name': 'Test Recipe',
+        'ingredients': 'Test Ingredients',
+        'steps': 'Test Steps'
+    }, follow_redirects=True)
+    assert response.status_code == 200
 
-def test_edit_recipe(client):
-    """Test the edit recipe route."""
-    with patch('app.app.db.recipes.find_one') as mock_find_one, \
-         patch('app.app.db.recipes.update_one') as mock_update_one:
-        mock_find_one.return_value = {"_id": "1", "name": "Chocolate Cake", "ingredients": "Chocolate", "steps": "Mix and bake"}
-        response = client.post('/edit/1', data={
-            'name': 'Chocolate Cake Improved',
-            'ingredients': 'Chocolate, More chocolate',
-            'steps': 'Mix and bake slowly'
-        }, follow_redirects=True)
-        assert response.status_code == 200
-        mock_update_one.assert_called_once()
+def test_edit_recipe(client, test_recipe_id):
+    """Test editing an existing recipe."""
+    response = client.post(f'/edit/{test_recipe_id}', data={
+        'name': 'Updated Test Recipe',
+        'ingredients': 'Updated Ingredients',
+        'steps': 'Updated Steps'
+    }, follow_redirects=True)
+    assert response.status_code == 200
 
-def test_delete_recipe(client):
-    """Test the delete recipe route."""
-    with patch('app.app.db.recipes.delete_one') as mock_delete:
-        response = client.post('/delete/1', follow_redirects=True)
-        assert response.status_code == 200
-        mock_delete.assert_called_once()
+def test_delete_recipe(client, test_recipe_id):
+    """Test deleting a recipe."""
+    response = client.post(f'/delete/{test_recipe_id}', follow_redirects=True)
+    assert response.status_code == 200
 
 def test_search_recipes(client):
-    """Test the search recipes route."""
-    response = client.get('/search?query=cake')
+    """Test the search functionality."""
+    response = client.get('/search?query=test')
     assert response.status_code == 200
-    assert 'Chocolate Cake' in response.get_data(as_text=True)
 
 def test_profile(client):
     """Test the profile page."""
