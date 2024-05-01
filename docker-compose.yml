@@ -15,7 +15,7 @@ services:
 
   mongo:
     image: mongo:latest
-    ports:
+    ports:  # Changed from 'port' to 'ports'
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
